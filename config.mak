@@ -42,10 +42,10 @@ endif
 ifeq ($(OPMODE), aarch32)
 ifeq ($(OS),Windows_NT)
 CROSS_TOOL_TOP			=
-CROSS_TOOL			= $(CROSS_TOOL_TOP)arm-none-eabi-
+CROSS_TOOL			= $(CROSS_TOOL_TOP)arm-eabi-
 else
 CROSS_TOOL_TOP			=
-CROSS_TOOL			= $(CROSS_TOOL_TOP)arm-none-eabi-
+CROSS_TOOL			= $(CROSS_TOOL_TOP)arm-eabi-
 endif
 endif
 
@@ -153,7 +153,10 @@ CFLAGS				+=	-g -Wall				\
 					-D__arm -DLOAD_FROM_$(BOOTFROM)		\
 					-DMEMTYPE_$(MEMTYPE)			\
 					-DINITPMIC_$(INITPMIC)			\
-					-D$(OPMODE)
+					-D$(OPMODE) \
+					-I./\
+					-Iprototype/s5p6818/base \
+					-Iprototype/s5p6818/module
 
 
 ifeq ($(OPMODE) , aarch32)
