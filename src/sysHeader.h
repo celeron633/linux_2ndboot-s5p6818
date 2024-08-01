@@ -28,7 +28,7 @@
 #if defined(ARCH_NXP5430)
 #include <nx_peridot.h>
 #endif
-#include <nx_type.h>
+#include "nx_type.h"
 #include <nx_debug2.h>
 #include <nx_chip.h>
 
